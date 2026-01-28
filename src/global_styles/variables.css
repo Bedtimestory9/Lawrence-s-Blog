@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/open-sans/OpenSans-Light.ttf");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
+
+:root {
+  --canva-sans: "Open Sans", sans-serif;
+  --deep-blue: #3e5f9d;
+  --light-blue: #6c87b2;
+  --background-paper: #f0ebdf;
+}
