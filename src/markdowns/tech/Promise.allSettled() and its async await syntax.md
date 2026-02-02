@@ -1,10 +1,11 @@
 ---
-title: 'Promise.allSettled() and its async await syntax.md'
+title: 'Promise.allSettled() and its async await syntax'
 author: 'Lawrence Su'
 date: "2026-01-05"
+slug: "promise_allsettled()_and_its_async_await_syntax"
 ---
 
-# Why I still love Fish shell
+# Promise.allSettled() usage
 
 ## What is Lorem Ipsum?
 

@@ -1,26 +1,42 @@
 import Styles from "./BlogPosts.module.css";
 import BreadCrumbs from "./BreadCrumbs";
+import type { InferEntrySchema, RenderedContent } from "astro:content";
 
-function TestHTML() {
-  return [...Array(15)].map((_, i) => (
-    <div className={Styles.entry} key={i}>
-      <div className={Styles.yearDate}>
-        <div className={Styles.year}>2026</div>
-        <div className={Styles.date}>Oct 6</div>
-      </div>
-      <a href="/tech_posts/why_I_still_love_fish_shell" className={Styles.post}>
-        Why I still love Fish shell
-      </a>
-      <div className={Styles.yearDate}></div>
-    </div>
-  ));
+interface TechPosts {
+  id: string;
+  body?: string;
+  collection: "techPosts";
+  data: InferEntrySchema<"techPosts">;
+  rendered?: RenderedContent;
+  filePath?: string;
 }
 
-export default function BlogPosts({ path }: { path: URL }) {
+export default function BlogPosts({
+  url,
+  techPosts,
+}: {
+  url: URL;
+  techPosts: TechPosts[];
+}) {
+  const dateSortedPosts = techPosts.sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+
   return (
     <>
-      <BreadCrumbs path={path} />
-      <div className={Styles.postBlock}>{TestHTML()}</div>
+      <BreadCrumbs url={url} />
+      {dateSortedPosts.map((p) => (
+        <div className={Styles.entry} key={p.id}>
+          <div className={Styles.yearDate}>
+            <div className={Styles.year}>{p.data.date.getFullYear()}</div>
+            <div className={Styles.date}>{p.data.date.getDate()}</div>
+          </div>
+          <a href={`/tech_posts/${p.data.slug}`} className={Styles.post}>
+            {p.data.title}
+          </a>
+          <div className={Styles.yearDate}></div>
+        </div>
+      ))}
     </>
   );
 }

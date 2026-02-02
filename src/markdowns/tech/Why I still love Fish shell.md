@@ -2,6 +2,7 @@
 title: 'Why I still love Fish shell'
 author: 'Lawrence Su'
 date: "2025-10-06"
+slug: "why_i_still_love_fish_shell"
 ---
 
 # Why I still love Fish shell

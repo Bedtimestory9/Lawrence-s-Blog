@@ -1,21 +1,42 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import Content from "../../components/content.astro";
 import BreadCrumbs from "../../components/BreadCrumbs";
+import { getCollection, render } from "astro:content";
+export async function getStaticPaths() {
+    const allTechPosts = await getCollection("techPosts");
+    return allTechPosts.map((p) => {
+        return { params: { post: p.data.slug }, props: { p } };
+    });
+}
 
-import type { GetStaticPaths } from "astro";
-export const getStaticPaths = (() => {
-    return [
-        {
-            params: { post: "why_I_still_love_fish_shell" },
-        },
-    ];
-}) satisfies GetStaticPaths;
+const { p } = Astro.props;
+const { Content } = await render(p);
 
-const path = Astro.url;
+const url = Astro.url;
 ---
 
 <MainLayout>
-    <BreadCrumbs path={path} />
-    <Content />
+    <BreadCrumbs url={url} path={p.data.slug} title={p.data.title} />
+    <div class="post-container">
+        <Content />
+    </div>
 </MainLayout>
+
+<style>
+    .post-container :global(h1) {
+        font-family: var(--open-sans-bold);
+        font-size: 40px;
+        color: var(--deep-blue);
+        text-align: center;
+    }
+
+    .post-container :global(h2) {
+        font-family: var(--open-sans-bold);
+        font-size: 27px;
+        color: var(--light-blue);
+    }
+
+    .post-container :global(p) {
+        font-size: 23px;
+    }
+</style>

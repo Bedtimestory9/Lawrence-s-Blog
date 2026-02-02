@@ -10,12 +10,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "strictNullChecks": true,
+    "allowJs": true,
     "path": {
       "@components/*": [
         "./src/components/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
       ],
       "@public/*": [
         "./public/*"

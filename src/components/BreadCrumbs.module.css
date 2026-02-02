@@ -1,7 +1,12 @@
-.text {
+.container {
   margin-top: 10px;
   color: var(--deep-blue);
   font-size: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.parentText {
   text-transform: capitalize;
 }
 
