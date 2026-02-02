@@ -1,0 +1,21 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Content from "../../components/content.astro";
+import BreadCrumbs from "../../components/BreadCrumbs";
+
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+    return [
+        {
+            params: { post: "why_I_still_love_fish_shell" },
+        },
+    ];
+}) satisfies GetStaticPaths;
+
+const path = Astro.url;
+---
+
+<MainLayout>
+    <BreadCrumbs path={path} />
+    <Content />
+</MainLayout>

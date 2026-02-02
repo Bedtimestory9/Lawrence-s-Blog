@@ -1,0 +1,14 @@
+.text {
+  margin-top: 10px;
+  color: var(--deep-blue);
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:visited {
+  color: var(--light-blue);
+}

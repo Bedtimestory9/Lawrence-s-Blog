@@ -1,8 +1,8 @@
 ---
 import Footer from "./Footer";
 import NavBar from "./NavBar";
-import HomeMainContainer from "../components/HomeMainContainer";
 import "../global_styles/variables.css";
+const path = Astro.url;
 ---
 
 <html lang="en">
@@ -16,14 +16,16 @@ import "../global_styles/variables.css";
 	</head>
 	<body class="root">
 		<div class="main-container">
-			<NavBar />
-			<HomeMainContainer />
+			<NavBar path={path} />
+			<main>
+				<slot />
+			</main>
 			<Footer />
 		</div>
 	</body>
 	<style>
 		.root {
-			font-family: var(--canva-sans);
+			font-family: var(--open-sans);
 			box-sizing: border-box;
 			margin: 0;
 			background-color: var(--background-paper);

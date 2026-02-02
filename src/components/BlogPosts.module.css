@@ -1,0 +1,30 @@
+.entry {
+  display: flex;
+  align-items: baseline;
+  font-size: 30px;
+}
+
+.yearDate {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+
+.year {
+  color: var(--deep-blue);
+}
+
+.date {
+  color: var(--light-blue);
+}
+
+.post {
+  color: var(--deep-blue);
+  font-family: var(--open-sans-bold);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.postBlock {
+  margin-top: 60px;
+}

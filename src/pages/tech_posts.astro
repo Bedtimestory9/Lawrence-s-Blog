@@ -1,0 +1,9 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import BlogPosts from "../components/BlogPosts";
+const path = Astro.url;
+---
+
+<MainLayout>
+    <BlogPosts path={path} />
+</MainLayout>

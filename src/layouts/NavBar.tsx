@@ -1,17 +1,29 @@
 import Styles from "./NavBar.module.css";
 
-export default function NavBar() {
+export default function NavBar({ path }: { path: URL }) {
+  const isHome = path.pathname === "/";
+
   return (
     <>
-      <div className={Styles.box}>
-        <div className={Styles.boxText}>Lawrence's Blog</div>
+      <div className={isHome ? Styles.homeBox : Styles.box}>
+        <div className={isHome ? Styles.homeBoxText : Styles.boxText}>
+          Lawrence's Blog
+        </div>
       </div>
-      <div className={Styles.container}>
+      <div className={isHome ? Styles.homeContainer : Styles.container}>
         <div className={Styles.linksDiv}>
-          <a className={Styles.link}>home</a>
-          <a className={Styles.link}>journey to love</a>
-          <a className={Styles.link}>journey to tech</a>
-          <a className={Styles.link}>about me</a>
+          <a className={Styles.link} href="/">
+            home
+          </a>
+          <a className={Styles.link} href="">
+            journey to love
+          </a>
+          <a className={Styles.link} href="/tech_posts">
+            journey to tech
+          </a>
+          <a className={Styles.link} href="">
+            about me
+          </a>
         </div>
       </div>
     </>
