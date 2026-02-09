@@ -3,7 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import { getCollection, render } from "astro:content";
 export async function getStaticPaths() {
-    const allTechPosts = await getCollection("techPosts");
+    const allTechPosts = await getCollection("lifePosts");
     return allTechPosts.map((p) => {
         return { params: { post: p.data.slug }, props: { p } };
     });

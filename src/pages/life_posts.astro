@@ -3,9 +3,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BlogPosts from "../components/BlogPosts";
 import { getCollection } from "astro:content";
 const url = Astro.url;
-const allTechPosts = await getCollection("techPosts");
+const allLifePosts = await getCollection("lifePosts");
 ---
 
 <MainLayout>
-    <BlogPosts url={url} posts={allTechPosts} />
+    <BlogPosts url={url} posts={allLifePosts} />
 </MainLayout>

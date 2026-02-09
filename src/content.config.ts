@@ -1,5 +1,5 @@
 import { defineCollection } from "astro:content";
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const techPosts = defineCollection({
@@ -12,4 +12,24 @@ const techPosts = defineCollection({
   }),
 });
 
-export const collections = { techPosts };
+const lifePosts = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/markdowns/love" }),
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    date: z.coerce.date(),
+    slug: z.string(),
+  }),
+});
+
+const aboutMe = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/markdowns/about_me" }),
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    date: z.coerce.date(),
+    slug: z.string(),
+  }),
+});
+
+export const collections = { techPosts, lifePosts, aboutMe };

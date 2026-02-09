@@ -1,3 +1,21 @@
 .container {
-  height: 600px;
+  height: var(--main-slot-height);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
+
+.lane {
+  display: flex;
+  gap: 50px;
+  /* animation: moveAcross 6s linear infinite; */
+}
+
+/* @keyframes moveAcross { */
+/*   0% { */
+/*     transform: translateX(0%); */
+/*   } */
+/*   100% { */
+/*     transform: translateX(65%); */
+/*   } */
+/* } */

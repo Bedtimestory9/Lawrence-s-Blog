@@ -1,23 +1,23 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import BreadCrumbs from "../../components/BreadCrumbs";
-import { getCollection, render } from "astro:content";
-export async function getStaticPaths() {
-    const allTechPosts = await getCollection("techPosts");
-    return allTechPosts.map((p) => {
-        return { params: { post: p.data.slug }, props: { p } };
-    });
+import MainLayout from "../layouts/MainLayout.astro";
+import BreadCrumbs from "../components/BreadCrumbs";
+import { render } from "astro:content";
+import { getEntry } from "astro:content";
+
+const aboutMe = await getEntry("aboutMe", "about_me");
+
+if (!aboutMe) {
+    throw new Error("About Me Not Found.");
 }
 
-const { p } = Astro.props;
-const { Content } = await render(p);
+const { Content } = await render(aboutMe);
 
 const url = Astro.url;
 ---
 
 <MainLayout>
     <div class="post-container">
-        <BreadCrumbs url={url} path={p.data.slug} title={p.data.title} />
+        <BreadCrumbs url={url} />
         <Content />
     </div>
 </MainLayout>

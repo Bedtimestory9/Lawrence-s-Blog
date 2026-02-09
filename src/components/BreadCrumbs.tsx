@@ -23,11 +23,13 @@ export default function BreadCrumbs({ url, title, path }: BreadCrumbsProps) {
           {parentPathName || ""}
         </a>
       </div>
-      {" > "}
-      <div className={Styles.childText}>
-        <a href={`/${parentPath}/${childPath}`} className={Styles.link}>
-          {childPathName || ""}
-        </a>
+      <div className={Styles.rightCaret}>{" > "}</div>
+      <div>
+        {title && (
+          <a href={`/${parentPath}/${childPath}`} className={Styles.link}>
+            {childPathName || ""}
+          </a>
+        )}
       </div>
     </div>
   );

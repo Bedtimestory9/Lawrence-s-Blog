@@ -1,6 +1,10 @@
+.container {
+  height: var(--main-slot-height);
+}
+
 .entry {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   font-size: 30px;
 }
 
@@ -15,6 +19,15 @@
 }
 
 .date {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.month {
+  color: var(--light-blue);
+}
+.day {
   color: var(--light-blue);
 }
 
@@ -23,6 +36,11 @@
   font-family: var(--open-sans-bold);
   text-decoration: none;
   cursor: pointer;
+}
+
+.post:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .postBlock {
