@@ -16,10 +16,10 @@ export default function NavBar({ url }: { url: URL }) {
             home
           </a>
           <a className={Styles.link} href="/life_posts">
-            journey to love
+            <span>journey to </span>love
           </a>
           <a className={Styles.link} href="/tech_posts">
-            journey to tech
+            <span>journey to </span>tech
           </a>
           <a className={Styles.link} href="/about_me">
             about me

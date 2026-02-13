@@ -23,7 +23,3 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# markdown files
-./src/markdowns/tech/
-./src/markdowns/love/
-./src/markdowns/about_me/

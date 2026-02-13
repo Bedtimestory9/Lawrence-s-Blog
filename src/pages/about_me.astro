@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumbs from "../components/BreadCrumbs";
+import PostLayout from "../layouts/PostLayout.astro";
 import { render } from "astro:content";
 import { getEntry } from "astro:content";
 
@@ -15,32 +16,9 @@ const { Content } = await render(aboutMe);
 const url = Astro.url;
 ---
 
-<MainLayout>
-    <div class="post-container">
+<MainLayout showFooter={false}>
+    <PostLayout>
         <BreadCrumbs url={url} />
         <Content />
-    </div>
+    </PostLayout>
 </MainLayout>
-
-<style>
-    .post-container {
-        height: var(--main-slot-height);
-        overflow-y: scroll;
-    }
-    .post-container :global(h1) {
-        font-family: var(--open-sans-bold);
-        font-size: 40px;
-        color: var(--deep-blue);
-        text-align: center;
-    }
-
-    .post-container :global(h2) {
-        font-family: var(--open-sans-bold);
-        font-size: 27px;
-        color: var(--light-blue);
-    }
-
-    .post-container :global(p) {
-        font-size: 23px;
-    }
-</style>

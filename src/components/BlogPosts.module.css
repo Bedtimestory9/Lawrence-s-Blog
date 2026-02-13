@@ -8,7 +8,7 @@
   font-size: 30px;
 }
 
-.yearDate {
+.dateEntry {
   display: flex;
   flex: 1;
   gap: 40px;
@@ -45,4 +45,24 @@
 
 .postBlock {
   margin-top: 60px;
+}
+
+@media (width <= 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .entry {
+    font-size: 20px;
+  }
+
+  .date {
+    font-size: 15px;
+    justify-content: space-around;
+  }
+
+  .dateEntry {
+    font-size: 15px;
+    gap: 0px;
+  }
 }

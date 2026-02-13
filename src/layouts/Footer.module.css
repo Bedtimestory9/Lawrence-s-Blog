@@ -7,3 +7,9 @@
   align-items: center;
   color: var(--background-paper);
 }
+
+@media (width <= 768px) {
+  .container {
+    display: none;
+  }
+}

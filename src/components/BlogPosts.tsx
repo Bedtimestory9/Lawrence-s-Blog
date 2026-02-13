@@ -30,18 +30,38 @@ export default function BlogPosts({
   url: URL;
   posts: LifePost[] | TechPost[];
 }) {
-  const dateSortedPosts = posts.sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  function customizedEntries() {
+    const dateSortedPosts = posts.sort(
+      (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    return dateSortedPosts.map((post, index) => {
+      const currentYear = post.data.date.getFullYear();
+      const nextPost = dateSortedPosts[index + 1];
+      const nextYear = nextPost?.data.date.getFullYear();
+
+      const isYearDisplayed = !nextPost || currentYear !== nextYear;
+
+      return {
+        ...post,
+        isYearDisplayed,
+      };
+    });
+  }
 
   return (
     <div className={Styles.container}>
       <BreadCrumbs url={url} />
       <div>
-        {dateSortedPosts.map((p) => (
+        {customizedEntries().map((p) => (
           <div className={Styles.entry} key={p.id}>
-            <div className={Styles.yearDate}>
-              <div className={Styles.year}>{p.data.date.getFullYear()}</div>
+            <div className={Styles.dateEntry}>
+              <div
+                className={Styles.year}
+                style={!p.isYearDisplayed ? { opacity: 0 } : {}}
+              >
+                {p.data.date.getFullYear()}
+              </div>
               <div className={Styles.date}>
                 <div className={Styles.month}>{monthFormat(p.data.date)}</div>
                 <div className={Styles.day}>{dayFormat(p.data.date)}</div>
@@ -50,7 +70,8 @@ export default function BlogPosts({
             <a href={`${url.pathname}/${p.data.slug}`} className={Styles.post}>
               {p.data.title}
             </a>
-            <div className={Styles.yearDate}></div>
+            {/* dummy div to center the titles */}
+            <div className={Styles.dateEntry}></div>
           </div>
         ))}
       </div>

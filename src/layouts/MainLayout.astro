@@ -2,6 +2,7 @@
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import "../global_styles/variables.css";
+const { showFooter = true } = Astro.props;
 const url = Astro.url;
 ---
 
@@ -20,7 +21,7 @@ const url = Astro.url;
 			<main>
 				<slot />
 			</main>
-			<Footer />
+			{showFooter && <Footer />}
 		</div>
 	</body>
 	<style>
