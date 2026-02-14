@@ -22,7 +22,7 @@ export default function NavBar({ url }: { url: URL }) {
             <span>journey to </span>tech
           </a>
           <a className={Styles.link} href="/about_me">
-            about me
+            about<span> me</span>
           </a>
         </div>
       </div>
