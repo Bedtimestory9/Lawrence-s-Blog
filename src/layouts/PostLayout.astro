@@ -1,0 +1,45 @@
+---
+
+---
+
+<div class="post-container">
+	<slot />
+</div>
+
+<style>
+	.post-container {
+		flex: 1;
+	}
+	.post-container :global(h1) {
+		font-family: var(--open-sans-bold);
+		font-size: 40px;
+		color: var(--deep-blue);
+		text-align: center;
+	}
+
+	.post-container :global(h2) {
+		font-family: var(--open-sans-bold);
+		font-size: 27px;
+		color: var(--light-blue);
+	}
+
+	.post-container :global(p) {
+		font-size: 23px;
+	}
+
+	.post-container :global(img) {
+		display: block;
+		margin: auto;
+	}
+
+	@media (width <= 768px) {
+		.post-container :global(img) {
+			width: 80%;
+			height: 80%;
+		}
+
+		.post-container {
+			padding: 20px 20px 200px 20px;
+		}
+	}
+</style>

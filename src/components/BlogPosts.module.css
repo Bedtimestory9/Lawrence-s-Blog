@@ -1,13 +1,33 @@
-.entry {
-  display: flex;
-  align-items: baseline;
-  font-size: 30px;
+.container {
+  height: var(--main-slot-height);
 }
 
-.yearDate {
+.entry {
   display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding: 15px 0 15px 0;
+}
+
+.titleDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail {
+  border: 1px var(--light-blue) solid;
+  height: 60px;
+  width: 400px;
+}
+
+.dateEntry {
+  display: flex;
+  align-items: center;
   flex: 1;
   gap: 40px;
+  width: 100px;
+  height: 100px;
 }
 
 .year {
@@ -15,6 +35,16 @@
 }
 
 .date {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.month {
+  color: var(--light-blue);
+}
+
+.day {
   color: var(--light-blue);
 }
 
@@ -25,6 +55,35 @@
   cursor: pointer;
 }
 
+.post:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 .postBlock {
   margin-top: 60px;
+}
+
+@media (width <= 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .entry {
+    font-size: 20px;
+  }
+
+  .date {
+    font-size: 15px;
+  }
+
+  .dateEntry {
+    font-size: 20px;
+  }
+}
+
+@media (768px < width <= 1200px) {
+  .entry {
+    font-size: 20px;
+  }
 }

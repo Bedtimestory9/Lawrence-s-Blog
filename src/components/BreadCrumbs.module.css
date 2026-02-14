@@ -1,6 +1,10 @@
 .container {
-  margin-top: 10px;
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
   color: var(--deep-blue);
+  background-color: var(--background-paper);
   font-size: 30px;
   display: flex;
   gap: 8px;
@@ -10,10 +14,26 @@
   text-transform: capitalize;
 }
 
+.rightCaret {
+  color: var(--light-blue);
+  font-family: var(--open-sans-bold);
+}
+
 .link {
   text-decoration: none;
 }
 
 .link:visited {
   color: var(--light-blue);
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+@media (width <= 768px) {
+  .container {
+    font-size: 20px;
+  }
 }

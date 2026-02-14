@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import BreadCrumbs from "../components/BreadCrumbs";
+import PostLayout from "../layouts/PostLayout.astro";
+import { render } from "astro:content";
+import { getEntry } from "astro:content";
+
+const aboutMe = await getEntry("aboutMe", "about_me");
+
+if (!aboutMe) {
+    throw new Error("About Me Not Found.");
+}
+
+const { Content } = await render(aboutMe);
+
+const url = Astro.url;
+---
+
+<MainLayout showRegularFooter={false}>
+    <PostLayout>
+        <BreadCrumbs url={url} />
+        <Content />
+    </PostLayout>
+</MainLayout>

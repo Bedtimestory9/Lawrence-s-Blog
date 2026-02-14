@@ -1,8 +1,10 @@
 ---
 import Footer from "./Footer";
+import PostFooter from "./PostFooter";
 import NavBar from "./NavBar";
 import "../global_styles/variables.css";
-const path = Astro.url;
+const { showRegularFooter = true } = Astro.props;
+const url = Astro.url;
 ---
 
 <html lang="en">
@@ -15,12 +17,12 @@ const path = Astro.url;
 		<title>Astro</title>
 	</head>
 	<body class="root">
-		<div class="main-container">
-			<NavBar path={path} />
+		<div class="page-body">
+			<NavBar {url} />
 			<main>
 				<slot />
 			</main>
-			<Footer />
+			{showRegularFooter && <Footer />}
 		</div>
 	</body>
 	<style>
@@ -30,9 +32,11 @@ const path = Astro.url;
 			margin: 0;
 			background-color: var(--background-paper);
 		}
-		.main-container {
-			width: clamp(768px, 100%, 1400px);
-			height: 100%;
+		.page-body {
+			width: clamp(768px, 80%, 1200px);
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
 			margin: auto;
 		}
 	</style>

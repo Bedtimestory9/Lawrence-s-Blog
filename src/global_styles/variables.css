@@ -1,5 +1,13 @@
 @font-face {
   font-family: "Open Sans";
+  src: url("/fonts/open-sans/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans Light";
   src: url("/fonts/open-sans/OpenSans-Light.ttf");
   font-weight: normal;
   font-size: normal;
@@ -14,11 +22,33 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Open Sans Semi-Bold Italic";
+  src: url("/fonts/open-sans/OpenSans-SemiboldItalic.ttf");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("/fonts/vt323/VT323-Regular.ttf");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
+
 :root {
   --open-sans: "Open Sans", sans-serif;
+  --open-sans-light: "Open Sans Light", sans-serif;
+  --vt323: "VT323", sans-serif;
   --open-sans-bold: "Open Sans Bold", sans-serif;
+  --open-sans-semibold-italic: "Open Sans Semi-Bold Italic", cursive;
+
   --deep-blue: #3e5f9d;
   --light-blue: #6c87b2;
   --dark-grey: #5a5a5a;
   --background-paper: #f0ebdf;
+
+  --main-slot-height: 760px;
 }

@@ -1,3 +1,112 @@
+/* from Uiverse */
 .container {
-  height: 600px;
+  height: var(--main-slot-height);
+  display: flex;
+  width: 100%;
+}
+
+.leftPane {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 320px;
+
+  --color: #d4d4d4;
+  background-color: var(--background-paper);
+  background-image:
+    linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 24%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 35px 35px;
+}
+
+.iconRow {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.iconRow > svg {
+  box-shadow: 2px 2px 0px var(--light-blue);
+}
+
+.iconRow > svg:nth-child(1) {
+  transform: rotate(-5deg);
+}
+.iconRow > svg:nth-child(2) {
+  transform: rotate(3deg);
+}
+.iconRow > svg:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.rightPane {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal {
+  font-family: var(--vt323);
+  color: var(--background-paper);
+  font-size: 30px;
+  height: 75%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  background-color: #3e5f9dcc;
+  box-shadow: 8px 5px 10px var(--deep-blue);
+}
+
+.prompt {
+  height: 15px;
+  padding: 60px 40px 30px 38px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 35px;
+}
+
+.output {
+  flex: 1;
+  display: flex;
+  padding-left: 45px;
+  padding-right: 25px;
+}
+
+.pointer {
+  padding-right: 4px;
+}
+
+.lane {
+  display: flex;
+  gap: 50px;
+}
+
+@media (width <= 768px) {
+  .leftPane {
+    width: 200px;
+  }
 }

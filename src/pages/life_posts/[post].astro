@@ -5,7 +5,7 @@ import PostLayout from "../../layouts/PostLayout.astro";
 import PostFooter from "../../layouts/PostFooter";
 import { getCollection, render } from "astro:content";
 export async function getStaticPaths() {
-    const allTechPosts = await getCollection("techPosts");
+    const allTechPosts = await getCollection("lifePosts");
     return allTechPosts.map((p) => {
         return { params: { post: p.data.slug }, props: { p } };
     });
