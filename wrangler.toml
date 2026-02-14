@@ -1,0 +1,10 @@
+name = "my-astro-blog"
+compatibility_date = "2024-04-03"
+
+[[routes]]
+pattern = "lawrencesu.blog"
+custom_domain = true
+
+[[routes]]
+pattern = "www.lawrencesu.blog"
+custom_domain = true
