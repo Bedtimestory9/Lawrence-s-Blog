@@ -1,8 +1,10 @@
 ---
+id: 1
 title: 'Promise.allSettled() and its async await syntax'
 author: 'Lawrence Su'
 date: "2026-01-05"
 slug: "promise_allsettled()_and_its_async_await_syntax"
+thumbnail: "./tech_images/1_thumbnail.png"
 ---
 
 # Promise.allSettled() usage

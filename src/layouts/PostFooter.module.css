@@ -1,0 +1,15 @@
+.container {
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 4px var(--deep-blue) dashed;
+  flex-shrink: 0;
+}
+
+.authorDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: var(--dark-grey);
+  height: 180px;
+}

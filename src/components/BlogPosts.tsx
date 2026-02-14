@@ -67,9 +67,17 @@ export default function BlogPosts({
                 <div className={Styles.day}>{dayFormat(p.data.date)}</div>
               </div>
             </div>
-            <a href={`${url.pathname}/${p.data.slug}`} className={Styles.post}>
-              {p.data.title}
-            </a>
+            <div className={Styles.titleDiv}>
+              <div className={Styles.thumbnail}>
+                <img src={p.data.thumbnail.src} />
+              </div>
+              <a
+                href={`${url.pathname}/${p.data.slug}`}
+                className={Styles.post}
+              >
+                {p.data.title}
+              </a>
+            </div>
             {/* dummy div to center the titles */}
             <div className={Styles.dateEntry}></div>
           </div>

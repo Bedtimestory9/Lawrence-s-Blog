@@ -16,7 +16,7 @@ const { Content } = await render(aboutMe);
 const url = Astro.url;
 ---
 
-<MainLayout showFooter={false}>
+<MainLayout showRegularFooter={false}>
     <PostLayout>
         <BreadCrumbs url={url} />
         <Content />

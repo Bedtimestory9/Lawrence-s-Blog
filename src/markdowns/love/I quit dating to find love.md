@@ -1,8 +1,10 @@
 ---
+id: 4
 title: 'I quit dating to find love'
 author: 'Lawrence Su'
 date: "2026-02-09"
 slug: "I_quit_dating_to_find_love"
+thumbnail: "./love_images/"
 ---
 
 # I quit dating to find love

@@ -1,8 +1,10 @@
 ---
+id: 3
 title: 'Why I still love Fish shell_1'
 author: 'Lawrence Su'
 date: "2025-11-06"
 slug: "why_i_still_love_fish_shell_1"
+thumbnail: "../tech_images/"
 ---
 
 # Why I still love Fish shell

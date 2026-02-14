@@ -25,6 +25,7 @@
   width: 300px;
   height: 60px;
   position: absolute;
+  z-index: 10;
   border: 10px solid var(--deep-blue);
   background-color: white;
   transition: height 0.2s ease-in-out;
@@ -47,7 +48,6 @@
   text-transform: uppercase;
   text-align: center;
 }
-
 .homeBoxText {
   font-size: 40px;
   transform: rotate(-10deg);
@@ -61,7 +61,7 @@
 
 .link {
   color: var(--background-paper);
-  font-size: 30px;
+  font-size: 25px;
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 20px 0 20px;
@@ -72,6 +72,29 @@
   background-color: var(--background-paper);
 }
 
+@media (768px < width <= 1200px) {
+  .link {
+    font-size: 15px;
+  }
+
+  .box {
+    width: 200px;
+    border-width: 5px;
+  }
+
+  .boxText {
+    font-size: 20px;
+  }
+  .container {
+    height: 70px;
+  }
+
+  .whole:hover .homeBoxText {
+    transform: rotate(0deg);
+    font-size: 20px;
+  }
+}
+
 @media (width <= 768px) {
   .boxText {
     font-size: 20px;
@@ -79,12 +102,26 @@
 
   .box {
     width: 200px;
+    height: 30px;
+    border: 5px solid var(--deep-blue);
+  }
+
+  .homeBox {
+    height: 120px;
+  }
+
+  .whole:hover .box {
+    height: 30px;
   }
 
   .homeBoxText {
     font-size: 20px;
   }
 
+  .whole:hover .homeBoxText {
+    transform: rotate(0deg);
+    font-size: 20px;
+  }
   .link {
     font-size: 20px;
   }
@@ -94,6 +131,7 @@
   }
 
   .container {
+    height: 40px;
     align-items: center;
   }
 }
