@@ -7,9 +7,9 @@ import PythonSvg from "./svg/PythonSvg";
 
 export default function HomeMainContainer() {
   const greetingString =
-    // "Hello, my name is Lawrence. I'm a self-learned frontend / fullstack developer, I love crafting shinny and neat stuffs on the internet, as well as solving people's IRL problems using technology.";
-    "Hello, my name is Lawrence. I'm a self-learned frontend / fullstack developer, I love crafting shinny and neat stuffs on the internet, as well as blah blah blah \nHappy Valentines Day Vallerie :)";
+    // "Hello, my name is Lawrence. I'm a self-learned frontend / fullstack developer, I love crafting shinny and neat stuffs on the internet, as well as blah blah blah \nHappy Valentines Day Vallerie :)";
 
+    "Hello, my name is Lawrence. I'm a self-learned frontend / fullstack developer, I love crafting shinny and neat stuffs on the internet, as well as solving people's IRL problems using technology.";
   return (
     <div className={Styles.container}>
       <div className={Styles.leftPane}>

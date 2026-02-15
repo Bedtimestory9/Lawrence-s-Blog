@@ -15,6 +15,9 @@ const { p } = Astro.props;
 const { Content } = await render(p);
 
 const url = Astro.url;
+
+// Fix build issue
+export const prerender = true;
 ---
 
 <MainLayout showRegularFooter={false}>

@@ -13,5 +13,14 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
+  markdown: {
+    shikiConfig: {
+      theme: "one-light",
+    },
+  },
+  vite: {
+    css: {
+      transformer: "lightningcss",
+    },
+  },
 });
-

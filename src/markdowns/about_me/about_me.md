@@ -22,7 +22,7 @@ I picked C++ because at the time the only thing I knew about it was: "It is the 
 
 It didn't matter one bit that it is the fastest, because at the level of my learning at the time, I was ocean apart from ever having to tamper with any performance related codes at all. But I LOVED that language even though I had minimal understanding of it, and thinking back, I still think I learned a lot from how low level C++ can be.
 
-## Now the journey goes on, what then?
+## Now the journey goes on, how it goes?
 
 ![JS Picture](./about_me_3.png)
 

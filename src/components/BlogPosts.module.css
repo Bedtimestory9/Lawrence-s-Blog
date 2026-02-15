@@ -5,7 +5,7 @@
 .entry {
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   padding: 15px 0 15px 0;
 }
 
@@ -23,6 +23,7 @@
 
 .dateEntry {
   display: flex;
+  font-size: 25px;
   align-items: center;
   flex: 1;
   gap: 40px;
@@ -38,6 +39,8 @@
   flex: 1;
   display: flex;
   gap: 10px;
+  max-width: 80px;
+  justify-content: space-between;
 }
 
 .month {
@@ -74,7 +77,8 @@
   }
 
   .date {
-    font-size: 15px;
+    font-size: 20px;
+    max-width: 56px;
   }
 
   .dateEntry {

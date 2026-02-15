@@ -23,7 +23,9 @@
   text-decoration: none;
 }
 
-.link:visited {
+.link:visited,
+.link:hover,
+.link:active {
   color: var(--light-blue);
 }
 

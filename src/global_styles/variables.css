@@ -48,7 +48,21 @@
   --deep-blue: #3e5f9d;
   --light-blue: #6c87b2;
   --dark-grey: #5a5a5a;
+  --grey-paper: #d1ccbf;
   --background-paper: #f0ebdf;
 
   --main-slot-height: 760px;
+
+  @media (prefers-color-scheme: light) {
+    .astro-code span {
+      font-size: 20px;
+    }
+
+    .astro-code {
+      background-color: var(--background-paper) !important;
+      border-left: 2px var(--light-blue) dashed;
+      padding-left: 100px;
+      display: flex;
+    }
+  }
 }
