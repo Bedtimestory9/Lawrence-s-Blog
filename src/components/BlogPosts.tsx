@@ -15,6 +15,10 @@ interface Post<T extends "techPosts" | "lifePosts"> {
 type LifePost = Post<"lifePosts">;
 type TechPost = Post<"techPosts">;
 
+type CustomizedPost<T> = T & {
+  isYearDisplayed: boolean;
+};
+
 function monthFormat(date: Date) {
   return format(date, "LLL");
 }
@@ -23,24 +27,25 @@ function dayFormat(date: Date) {
   return format(date, "d");
 }
 
-export default function BlogPosts({
+export default function BlogPosts<T extends LifePost | TechPost>({
   url,
   posts,
 }: {
   url: URL;
-  posts: LifePost[] | TechPost[];
+  posts: T[];
 }) {
-  function customizedEntries() {
-    const dateSortedPosts = posts.sort(
+  function customizedEntries(): CustomizedPost<T>[] {
+    const dateSortedPosts = posts.toSorted(
       (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
     );
 
     return dateSortedPosts.map((post, index) => {
       const currentYear = post.data.date.getFullYear();
-      const nextPost = dateSortedPosts[index + 1];
-      const nextYear = nextPost?.data.date.getFullYear();
+      const nextYear = dateSortedPosts[index + 1]?.data.date.getFullYear();
 
-      const isYearDisplayed = !nextPost || currentYear !== nextYear;
+      // If all posts finish iterating or the currentYear will change on next iteration
+      const isYearDisplayed =
+        nextYear === undefined || currentYear !== nextYear;
 
       return {
         ...post,
