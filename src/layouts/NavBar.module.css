@@ -4,7 +4,7 @@
 
 .whole:hover .homeBoxText {
   transform: rotate(0deg);
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 .container {
@@ -43,13 +43,13 @@
 .boxText {
   font-family: var(--open-sans-bold);
   color: var(--dark-grey);
-  font-size: 30px;
+  font-size: 3rem;
   transform: rotate(0deg);
   text-transform: uppercase;
   text-align: center;
 }
 .homeBoxText {
-  font-size: 40px;
+  font-size: 4rem;
   transform: rotate(-10deg);
   transition: all 0.5s ease-in-out;
 }
@@ -61,7 +61,7 @@
 
 .link {
   color: var(--background-paper);
-  font-size: 25px;
+  font-size: 2.5rem;
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 20px 0 20px;
@@ -74,7 +74,7 @@
 
 @media (768px < width <= 1200px) {
   .link {
-    font-size: 15px;
+    font-size: 1.5rem;
   }
 
   .box {
@@ -83,7 +83,7 @@
   }
 
   .boxText {
-    font-size: 20px;
+    font-size: 2rem;
   }
   .container {
     height: 70px;
@@ -91,13 +91,13 @@
 
   .whole:hover .homeBoxText {
     transform: rotate(0deg);
-    font-size: 20px;
+    font-size: 2rem;
   }
 }
 
 @media (width <= 768px) {
   .boxText {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .box {
@@ -115,15 +115,15 @@
   }
 
   .homeBoxText {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .whole:hover .homeBoxText {
     transform: rotate(0deg);
-    font-size: 20px;
+    font-size: 2rem;
   }
   .link {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .link > span {

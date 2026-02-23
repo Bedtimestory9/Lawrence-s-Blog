@@ -47,7 +47,9 @@
 
   --deep-blue: #3e5f9d;
   --light-blue: #6c87b2;
+  --text-grey: #302e2e;
   --dark-grey: #5a5a5a;
+  --greyish-paper: #d1ccbf;
   --blueish-paper: #e9ebf0;
   --background-paper: #f0ebdf;
 
@@ -55,7 +57,7 @@
 
   @media (prefers-color-scheme: light) {
     .astro-code span {
-      font-size: 20px;
+      font-size: 2rem;
     }
 
     .astro-code {
@@ -65,4 +67,8 @@
       display: flex;
     }
   }
+}
+
+html {
+  font-size: 62.5%;
 }

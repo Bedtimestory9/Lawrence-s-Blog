@@ -5,7 +5,7 @@
 .entry {
   display: flex;
   align-items: center;
-  font-size: 25px;
+  font-size: 2.5rem;
   padding: 15px 0 15px 0;
 }
 
@@ -23,7 +23,7 @@
 
 .dateEntry {
   display: flex;
-  font-size: 25px;
+  font-size: 2.5rem;
   align-items: center;
   flex: 1;
   gap: 40px;
@@ -73,21 +73,21 @@
   }
 
   .entry {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .date {
-    font-size: 20px;
+    font-size: 2rem;
     max-width: 56px;
   }
 
   .dateEntry {
-    font-size: 20px;
+    font-size: 2rem;
   }
 }
 
 @media (768px < width <= 1200px) {
   .entry {
-    font-size: 20px;
+    font-size: 2rem;
   }
 }
