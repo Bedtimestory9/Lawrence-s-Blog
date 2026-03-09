@@ -55,17 +55,15 @@
 
   --main-slot-height: 760px;
 
-  @media (prefers-color-scheme: light) {
-    .astro-code span {
-      font-size: 2rem;
-    }
+  .astro-code span {
+    font-size: 1.5em;
+  }
 
-    .astro-code {
-      background-color: var(--blueish-paper) !important;
-      border-left: 2px var(--light-blue) solid;
-      padding-left: 100px;
-      display: flex;
-    }
+  .astro-code {
+    background-color: var(--text-grey) !important;
+    border-left: 4px var(--light-blue) solid;
+    padding: 2.5em 2em 2.5em 10em;
+    display: flex;
   }
 }
 

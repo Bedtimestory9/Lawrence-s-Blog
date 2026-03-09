@@ -17,8 +17,8 @@ const url = Astro.url;
 ---
 
 <MainLayout showRegularFooter={false}>
+    <BreadCrumbs url={url} />
     <PostLayout>
-        <BreadCrumbs url={url} />
         <div class="about-me">
             <Content />
         </div>

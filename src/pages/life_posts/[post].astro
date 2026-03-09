@@ -20,8 +20,8 @@ export const prerender = true;
 ---
 
 <MainLayout showRegularFooter={false}>
+    <BreadCrumbs url={url} path={p.data.slug} title={p.data.title} />
     <PostLayout>
-        <BreadCrumbs url={url} path={p.data.slug} title={p.data.title} />
         <Content />
         <PostFooter author={p.data.author} date={p.data.date} />
     </PostLayout>
