@@ -14,10 +14,10 @@ const url = Astro.url;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Lawrence's Blog</title>
 	</head>
-	<body class="root">
-		<div class="page-body">
+	<body>
+		<div class=`page-body ${showRegularFooter && "page-height-with-footer"}`>
 			<NavBar {url} />
 			<main>
 				<slot />
@@ -26,18 +26,19 @@ const url = Astro.url;
 		</div>
 	</body>
 	<style>
-		.root {
-			font-family: var(--open-sans);
-			box-sizing: border-box;
+		body {
 			margin: 0;
-			background-color: var(--background-paper);
 		}
 		.page-body {
 			width: clamp(768px, 80%, 1200px);
-			height: 100vh;
+			height: 100%;
 			display: flex;
 			flex-direction: column;
 			margin: auto;
+		    background-color: var(--background-paper);
+		}
+		.page-height-with-footer {
+			height: 100vh;
 		}
 	</style>
 </html>

@@ -55,6 +55,8 @@
 
   --main-slot-height: 760px;
 
+  font-family: var(--open-sans);
+
   .astro-code span {
     font-size: 1.5em;
   }
@@ -69,4 +71,5 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }

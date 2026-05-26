@@ -2,6 +2,10 @@
   height: var(--main-slot-height);
 }
 
+.entriesContainer{
+  padding: 0 3em;
+}
+
 .entry {
   display: flex;
   align-items: center;
@@ -26,9 +30,9 @@
   font-size: 2.5rem;
   align-items: center;
   flex: 1;
-  gap: 40px;
-  width: 100px;
-  height: 100px;
+  gap: 1em;
+  width: 10rem;
+  height: 10rem;
 }
 
 .year {
@@ -38,8 +42,8 @@
 .date {
   flex: 1;
   display: flex;
-  gap: 10px;
-  max-width: 80px;
+  gap: 1em;
+  max-width: 8rem;
   justify-content: space-between;
 }
 
@@ -64,7 +68,7 @@
 }
 
 .postBlock {
-  margin-top: 60px;
+  margin-top: 6em;
 }
 
 @media (width <= 768px) {

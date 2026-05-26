@@ -1,4 +1,4 @@
-import Styles from "./BlogPosts.module.css";
+import Styles from "./PostThumb.module.css";
 import BreadCrumbs from "./BreadCrumbs";
 import type { InferEntrySchema, RenderedContent } from "astro:content";
 import { format } from "date-fns";
@@ -27,14 +27,14 @@ function dayFormat(date: Date) {
   return format(date, "d");
 }
 
-export default function BlogPosts<T extends LifePost | TechPost>({
+export default function PostThumb<T extends LifePost | TechPost>({
   url,
   posts,
 }: {
   url: URL;
   posts: T[];
 }) {
-  function customizedEntries(): CustomizedPost<T>[] {
+  function entries(): CustomizedPost<T>[] {
     const dateSortedPosts = posts.toSorted(
       (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
     );
@@ -57,8 +57,8 @@ export default function BlogPosts<T extends LifePost | TechPost>({
   return (
     <div className={Styles.container}>
       <BreadCrumbs url={url} />
-      <div>
-        {customizedEntries().map((p) => (
+      <div className={Styles.entriesContainer}>
+        {entries().map((p) => (
           <div className={Styles.entry} key={p.id}>
             <div className={Styles.dateEntry}>
               <div
