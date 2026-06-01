@@ -12,6 +12,7 @@ const techPosts = defineCollection({
       date: z.coerce.date(),
       slug: z.string(),
       thumbnail: image(),
+      tag: z.string(),
     }),
 });
 
@@ -25,6 +26,7 @@ const lifePosts = defineCollection({
       date: z.coerce.date(),
       slug: z.string(),
       thumbnail: image(),
+      tag: z.string(),
     }),
 });
 
