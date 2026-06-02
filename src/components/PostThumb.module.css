@@ -80,7 +80,7 @@
 
   .date {
     font-size: 2rem;
-    max-width: 56px;
+    width: 5.6rem;
   }
 
   .dateEntry {
@@ -91,5 +91,14 @@
 @media (768px < width <= 1200px) {
   .entry {
     font-size: 2rem;
+  }
+
+  .dateEntry {
+    font-size: 2rem;
+  }
+
+  .date {
+    font-size: 2rem;
+    width: 5.6rem;
   }
 }
