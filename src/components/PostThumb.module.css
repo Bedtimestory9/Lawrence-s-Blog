@@ -1,8 +1,8 @@
 .container {
-  height: var(--main-slot-height);
+  min-height: 1200px;
 }
 
-.entriesContainer{
+.entriesContainer {
   padding: 0 3em;
 }
 
@@ -57,7 +57,6 @@
 .post {
   color: var(--deep-blue);
   font-family: var(--open-sans-bold);
-  text-decoration: none;
   cursor: pointer;
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -69,14 +68,12 @@
 
 @media (width <= 768px) {
   .dateEntry {
-    font-size: 1.5rem;
     gap: 0.2em;
     font-size: 2rem;
   }
   .date {
     flex: 1;
   }
-
 }
 
 @media (768px < width <= 1200px) {
@@ -85,11 +82,11 @@
   }
 
   .dateEntry {
+    gap: 0.2em;
     font-size: 2rem;
   }
 
   .date {
-    font-size: 2rem;
-    width: 5.6rem;
+    flex: 1;
   }
 }

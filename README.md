@@ -7,6 +7,11 @@
 - use `p > code` to style the inline code block
 - use `.astro-code` in `variables.css` to style the code block in languages
 
+## Images
+
+- thumbnails have to be in the sub-route of the markdown files now
+- images are in /public folder
+
 ## Troubleshooting
 
 - Authentication problem in wrangler

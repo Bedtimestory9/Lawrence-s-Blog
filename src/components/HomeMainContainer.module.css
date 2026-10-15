@@ -1,5 +1,5 @@
 .container {
-  height: var(--main-slot-height);
+  min-height: var(--main-slot-height);
   display: flex;
   width: 100%;
 }
@@ -118,6 +118,5 @@
   .container {
     display: flex;
     width: 100%;
-    height: 100%;
   }
 }
