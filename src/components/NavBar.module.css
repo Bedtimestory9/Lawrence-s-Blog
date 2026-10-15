@@ -48,6 +48,7 @@
   text-transform: uppercase;
   text-align: center;
 }
+
 .homeBoxText {
   font-size: 4rem;
   transform: rotate(-10deg);
@@ -106,10 +107,11 @@
     width: 14rem;
     height: 30px;
     border: 5px solid var(--deep-blue);
+    display: none;
   }
 
   .homeBox {
-    height: 120px;
+    display: none;
   }
 
   .whole:hover .box {
@@ -121,7 +123,7 @@
   }
 
   .link {
-    font-size: 1.5rem;
+    font-size: 3rem;
     padding: 0 0.8rem 0 0.8rem;
   }
 
@@ -129,8 +131,18 @@
     display: none;
   }
 
+  .linksDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .container {
-    height: 40px;
+    height: 10rem;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 768px;
+    justify-content: space-evenly;
   }
 }

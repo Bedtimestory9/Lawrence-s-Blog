@@ -1,4 +1,3 @@
-/* from Uiverse */
 .container {
   height: var(--main-slot-height);
   display: flex;
@@ -48,7 +47,7 @@
 }
 
 .iconRow > svg {
-  box-shadow: 2px 2px 0px var(--light-blue);
+  box-shadow: 2px 2px 0 var(--light-blue);
 }
 
 .iconRow > svg:nth-child(1) {
@@ -105,8 +104,20 @@
   gap: 50px;
 }
 
+@media (768px < width <= 1200px) {
+  .container {
+    height: 80vh;
+  }
+}
+
 @media (width <= 768px) {
   .leftPane {
     width: 200px;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
   }
 }
