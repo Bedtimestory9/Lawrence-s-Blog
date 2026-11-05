@@ -12,6 +12,10 @@
 - thumbnails have to be in the sub-route of the markdown files now
 - images are in /public folder
 
+## Deploy
+
+`pnpm astro build && pnpm dlx wrangler deploy`
+
 ## Troubleshooting
 
 - Authentication problem in wrangler
