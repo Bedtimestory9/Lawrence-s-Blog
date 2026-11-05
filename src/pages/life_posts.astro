@@ -1,11 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import BlogPosts from "../components/BlogPosts";
+import PostThumb from "../components/PostThumb"
 import { getCollection } from "astro:content";
 const url = Astro.url;
 const allLifePosts = await getCollection("lifePosts");
 ---
 
 <MainLayout>
-    <BlogPosts url={url} posts={allLifePosts} />
+    <PostThumb url={url} posts={allLifePosts} />
 </MainLayout>

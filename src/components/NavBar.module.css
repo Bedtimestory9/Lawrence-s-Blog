@@ -4,12 +4,12 @@
 
 .whole:hover .homeBoxText {
   transform: rotate(0deg);
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 .container {
   width: 100%;
-  height: 80px;
+  height: 7rem;
   background-color: var(--deep-blue);
   display: flex;
   justify-content: flex-end;
@@ -26,7 +26,7 @@
   height: 60px;
   position: absolute;
   z-index: 10;
-  border: 10px solid var(--deep-blue);
+  border: 0.5em solid var(--deep-blue);
   background-color: white;
   transition: height 0.2s ease-in-out;
   display: flex;
@@ -43,13 +43,14 @@
 .boxText {
   font-family: var(--open-sans-bold);
   color: var(--dark-grey);
-  font-size: 30px;
+  font-size: 3rem;
   transform: rotate(0deg);
   text-transform: uppercase;
   text-align: center;
 }
+
 .homeBoxText {
-  font-size: 40px;
+  font-size: 4rem;
   transform: rotate(-10deg);
   transition: all 0.5s ease-in-out;
 }
@@ -61,12 +62,13 @@
 
 .link {
   color: var(--background-paper);
-  font-size: 25px;
+  font-size: 2.5rem;
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 20px 0 20px;
   cursor: pointer;
 }
+
 .link:hover {
   color: var(--deep-blue);
   background-color: var(--background-paper);
@@ -74,7 +76,7 @@
 
 @media (768px < width <= 1200px) {
   .link {
-    font-size: 15px;
+    font-size: 2.5rem;
   }
 
   .box {
@@ -83,31 +85,33 @@
   }
 
   .boxText {
-    font-size: 20px;
+    font-size: 2rem;
   }
+
   .container {
     height: 70px;
   }
 
   .whole:hover .homeBoxText {
     transform: rotate(0deg);
-    font-size: 20px;
+    font-size: 2rem;
   }
 }
 
 @media (width <= 768px) {
   .boxText {
-    font-size: 20px;
+    font-size: 1em;
   }
 
   .box {
-    width: 200px;
+    width: 14rem;
     height: 30px;
     border: 5px solid var(--deep-blue);
+    display: none;
   }
 
   .homeBox {
-    height: 120px;
+    display: none;
   }
 
   .whole:hover .box {
@@ -115,23 +119,30 @@
   }
 
   .homeBoxText {
-    font-size: 20px;
+    font-size: 1rem;
   }
 
-  .whole:hover .homeBoxText {
-    transform: rotate(0deg);
-    font-size: 20px;
-  }
   .link {
-    font-size: 20px;
+    font-size: 3rem;
+    padding: 0 0.8rem 0 0.8rem;
   }
 
   .link > span {
     display: none;
   }
 
+  .linksDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .container {
-    height: 40px;
+    height: 10rem;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 768px;
+    justify-content: space-evenly;
   }
 }

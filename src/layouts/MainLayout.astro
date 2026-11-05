@@ -1,7 +1,6 @@
 ---
-import Footer from "./Footer";
-import PostFooter from "./PostFooter";
-import NavBar from "./NavBar";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 import "../global_styles/variables.css";
 const { showRegularFooter = true } = Astro.props;
 const url = Astro.url;
@@ -10,14 +9,16 @@ const url = Astro.url;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Lawrence's Blog</title>
 	</head>
-	<body class="root">
-		<div class="page-body">
+	<body>
+		<div
+			class=`page-body ${showRegularFooter && "page-height-with-footer"}`
+		>
 			<NavBar {url} />
 			<main>
 				<slot />
@@ -26,18 +27,37 @@ const url = Astro.url;
 		</div>
 	</body>
 	<style>
-		.root {
-			font-family: var(--open-sans);
-			box-sizing: border-box;
+		body {
 			margin: 0;
-			background-color: var(--background-paper);
+			background: url("/images/oldschool.jpg");
+			background-size: cover;
 		}
+
 		.page-body {
-			width: clamp(768px, 80%, 1200px);
-			height: 100vh;
+			height: 100%;
 			display: flex;
 			flex-direction: column;
 			margin: auto;
+			background-color: var(--background-paper);
+			box-shadow: 0px 5px 5px var(--deep-blue);
+		}
+
+		.page-height-with-footer {
+			height: 100vh;
+		}
+
+		@media (width <= 768px) {
+			.page-body {
+				/* WARN:This is hardcoded min-height for mobile */
+				min-height: 180rem;
+				width: 768px;
+			}
+		}
+
+		@media (width >= 1200px) {
+			.page-body {
+				width: 1200px;
+			}
 		}
 	</style>
 </html>

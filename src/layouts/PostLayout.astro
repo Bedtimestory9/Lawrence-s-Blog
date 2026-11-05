@@ -9,27 +9,48 @@
 <style>
 	.post-container {
 		flex: 1;
+		margin: auto;
+		max-width: 90rem;
 	}
 	.post-container :global(h1) {
 		font-family: var(--open-sans-bold);
-		font-size: 40px;
+		font-size: 4rem;
 		color: var(--deep-blue);
 		text-align: center;
+		margin-top: 5rem;
+		margin-bottom: 10rem;
 	}
 
 	.post-container :global(h2) {
 		font-family: var(--open-sans-bold);
-		font-size: 27px;
+		font-size: 2.7rem;
 		color: var(--light-blue);
+		text-align: center;
+	}
+
+	.post-container :global(b) {
+		font-family: var(--open-sans-bold);
 	}
 
 	.post-container :global(p) {
-		font-size: 23px;
+		color: var(--text-grey);
+		font-size: 2.1rem;
+	}
+
+	.post-container :global(p > code) {
+		padding: 2px 3px 2px 3px;
+		background-color: var(--greyish-paper);
+	}
+
+	.post-container :global(a) {
+		color: var(--light-blue);
+		text-decoration: none;
 	}
 
 	.post-container :global(img) {
 		display: block;
 		margin: auto;
+		margin-bottom: 5rem;
 	}
 
 	@media (width <= 768px) {

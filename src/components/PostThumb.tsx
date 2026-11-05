@@ -1,4 +1,4 @@
-import Styles from "./BlogPosts.module.css";
+import Styles from "./PostThumb.module.css";
 import BreadCrumbs from "./BreadCrumbs";
 import type { InferEntrySchema, RenderedContent } from "astro:content";
 import { format } from "date-fns";
@@ -15,6 +15,10 @@ interface Post<T extends "techPosts" | "lifePosts"> {
 type LifePost = Post<"lifePosts">;
 type TechPost = Post<"techPosts">;
 
+type CustomizedPost<T> = T & {
+  isYearDisplayed: boolean;
+};
+
 function monthFormat(date: Date) {
   return format(date, "LLL");
 }
@@ -23,24 +27,25 @@ function dayFormat(date: Date) {
   return format(date, "d");
 }
 
-export default function BlogPosts({
+export default function PostThumb<T extends LifePost | TechPost>({
   url,
   posts,
 }: {
   url: URL;
-  posts: LifePost[] | TechPost[];
+  posts: T[];
 }) {
-  function customizedEntries() {
-    const dateSortedPosts = posts.sort(
+  function entries(): CustomizedPost<T>[] {
+    const dateSortedPosts = posts.toSorted(
       (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
     );
 
     return dateSortedPosts.map((post, index) => {
       const currentYear = post.data.date.getFullYear();
-      const nextPost = dateSortedPosts[index + 1];
-      const nextYear = nextPost?.data.date.getFullYear();
+      const nextYear = dateSortedPosts[index + 1]?.data.date.getFullYear();
 
-      const isYearDisplayed = !nextPost || currentYear !== nextYear;
+      // If all posts finish iterating or the currentYear will change on next iteration
+      const isYearDisplayed =
+        nextYear === undefined || currentYear !== nextYear;
 
       return {
         ...post,
@@ -52,8 +57,8 @@ export default function BlogPosts({
   return (
     <div className={Styles.container}>
       <BreadCrumbs url={url} />
-      <div>
-        {customizedEntries().map((p) => (
+      <div className={Styles.entriesContainer}>
+        {entries().map((p) => (
           <div className={Styles.entry} key={p.id}>
             <div className={Styles.dateEntry}>
               <div

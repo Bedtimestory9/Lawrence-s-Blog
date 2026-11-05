@@ -4,7 +4,7 @@ export default function NavBar({ url }: { url: URL }) {
   const isHome = url.pathname === "/";
 
   return (
-    <div className={Styles.whole}>
+    <nav>
       <div className={`${Styles.box} ${isHome && Styles.homeBox}`}>
         <div className={`${isHome && Styles.homeBoxText} ${Styles.boxText}`}>
           Lawrence's Blog
@@ -26,6 +26,6 @@ export default function NavBar({ url }: { url: URL }) {
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

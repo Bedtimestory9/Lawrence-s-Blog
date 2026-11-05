@@ -1,13 +1,15 @@
 .container {
   position: sticky;
   top: 0;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1em;
   color: var(--deep-blue);
   background-color: var(--background-paper);
-  font-size: 30px;
+  font-size: 2.5em;
   display: flex;
   gap: 8px;
+  box-shadow: 0 1px 1rem var(--light-blue);
 }
 
 .parentText {
@@ -23,7 +25,9 @@
   text-decoration: none;
 }
 
-.link:visited {
+.link:visited,
+.link:hover,
+.link:active {
   color: var(--light-blue);
 }
 
@@ -34,6 +38,6 @@
 
 @media (width <= 768px) {
   .container {
-    font-size: 20px;
+    font-size: 2rem;
   }
 }

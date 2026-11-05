@@ -1,0 +1,92 @@
+.container {
+  min-height: 1200px;
+}
+
+.entriesContainer {
+  padding: 0 3em;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  padding: 15px 0 15px 0;
+}
+
+.titleDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 6rem;
+  width: 40rem;
+}
+
+.thumbnail {
+  border-top: 1px var(--light-blue) dashed;
+  border-left: 1px var(--light-blue) dashed;
+  border-right: 1px var(--light-blue) dashed;
+}
+
+.dateEntry {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 1em;
+  width: 10rem;
+  height: 10rem;
+}
+
+.year {
+  color: var(--light-blue);
+}
+
+.date {
+  display: flex;
+  justify-content: space-evenly;
+  width: 10rem;
+}
+
+.month {
+  color: var(--light-blue);
+}
+
+.day {
+  color: var(--deep-blue);
+}
+
+.post {
+  color: var(--deep-blue);
+  font-family: var(--open-sans-bold);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.postBlock {
+  margin-top: 6em;
+}
+
+@media (width <= 768px) {
+  .dateEntry {
+    gap: 0.2em;
+    font-size: 2rem;
+  }
+  .date {
+    flex: 1;
+  }
+}
+
+@media (768px < width <= 1200px) {
+  .entry {
+    font-size: 2rem;
+  }
+
+  .dateEntry {
+    gap: 0.2em;
+    font-size: 2rem;
+  }
+
+  .date {
+    flex: 1;
+  }
+}

@@ -1,13 +1,11 @@
 import Styles from "./BreadCrumbs.module.css";
 
-interface BreadCrumbsProps {
+// This breadcrumb is only designed for 2 layers
+export default function BreadCrumbs({ url, title, path }: {
   url: URL;
   title?: string;
   path?: string;
-}
-
-// This breadcrumb is only designed for 2 layers
-export default function BreadCrumbs({ url, title, path }: BreadCrumbsProps) {
+}) {
   const parentPath = url.pathname.split("/")[1];
   const parentPathName = url.pathname
     .split("/")

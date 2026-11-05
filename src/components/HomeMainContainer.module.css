@@ -1,6 +1,5 @@
-/* from Uiverse */
 .container {
-  height: var(--main-slot-height);
+  min-height: var(--main-slot-height);
   display: flex;
   width: 100%;
 }
@@ -48,7 +47,7 @@
 }
 
 .iconRow > svg {
-  box-shadow: 2px 2px 0px var(--light-blue);
+  box-shadow: 2px 2px 0 var(--light-blue);
 }
 
 .iconRow > svg:nth-child(1) {
@@ -71,7 +70,7 @@
 .terminal {
   font-family: var(--vt323);
   color: var(--background-paper);
-  font-size: 30px;
+  font-size: 3rem;
   height: 75%;
   width: 85%;
   display: flex;
@@ -86,7 +85,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 35px;
+  font-size: 3.5rem;
 }
 
 .output {
@@ -105,8 +104,19 @@
   gap: 50px;
 }
 
+@media (768px < width <= 1200px) {
+  .container {
+    height: 80vh;
+  }
+}
+
 @media (width <= 768px) {
   .leftPane {
     width: 200px;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
   }
 }
